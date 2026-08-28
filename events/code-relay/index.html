@@ -9,23 +9,109 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Code Relay — Aurore Rakoto</title>
+    <title>Code Relay</title>
 
     <link
         rel="stylesheet"
         href="/css/global.css"
     >
+
+    <link
+        rel="stylesheet"
+        href="/css/code-relay.css"
+    >
 </head>
 
-<body>
+<body class="relay-page">
 
-    <a href="/events/">
-        ← Events
-    </a>
+<main class="relay-container">
 
-    <h1>
-        Code Relay
-    </h1>
+    <header class="relay-header">
+
+        <div>
+            <span class="relay-label">
+                42 BELGIUM
+            </span>
+
+            <h1>
+                Code Relay
+            </h1>
+        </div>
+
+
+        <div
+            class="relay-status"
+            id="relay-status"
+        >
+            WAITING
+        </div>
+
+    </header>
+
+
+    <section class="relay-game-info">
+
+        <div class="relay-round">
+
+            <span>
+                ROUND
+            </span>
+
+            <strong id="round">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="relay-timer">
+
+            <span>
+                TIME
+            </span>
+
+            <strong id="timer">
+                02:00
+            </strong>
+
+        </div>
+
+
+        <div class="relay-subject">
+
+            <span>
+                SUBJECT
+            </span>
+
+            <strong id="subject">
+                Waiting...
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>
+            Teams
+        </h2>
+
+        <div
+            class="relay-teams"
+            id="teams"
+        >
+        </div>
+
+    </section>
+
+</main>
+
+
+<script
+    src="/js/code-relay/scoreboard.js"
+></script>
 
 </body>
 
