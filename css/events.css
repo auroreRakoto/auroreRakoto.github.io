@@ -6,33 +6,19 @@
     min-height: 100vh;
 
     padding:
-        50px
-        clamp(
-            25px,
-            6vw,
-            100px
-        )
+        60px
+        clamp(24px, 6vw, 100px)
         80px;
 
     background:
         radial-gradient(
             circle at 15% 20%,
-            rgba(
-                80,
-                90,
-                255,
-                0.14
-            ),
+            rgba(80, 90, 255, 0.12),
             transparent 35%
         ),
         radial-gradient(
             circle at 85% 75%,
-            rgba(
-                255,
-                50,
-                180,
-                0.1
-            ),
+            rgba(255, 50, 180, 0.08),
             transparent 35%
         ),
         #080a10;
@@ -40,27 +26,64 @@
 
 
 /* ============================================================ */
-/* EVENTS GRID                                                  */
+/* CONTAINER                                                    */
+/* ============================================================ */
+
+.events-container {
+    width: min(1300px, 100%);
+
+    margin: 0 auto;
+}
+
+
+/* ============================================================ */
+/* HEADER                                                       */
+/* ============================================================ */
+
+.events-header {
+    margin-bottom: 55px;
+}
+
+
+.events-number {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color:
+        rgba(255, 255, 255, 0.35);
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.2em;
+}
+
+
+.events-header h1 {
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            5.5rem
+        );
+
+    font-weight: 600;
+
+    letter-spacing: -0.05em;
+}
+
+
+/* ============================================================ */
+/* GRID                                                         */
 /* ============================================================ */
 
 .events-grid {
-    width:
-        min(
-            1300px,
-            100%
-        );
-
-    margin: 0 auto;
-
     display: grid;
 
     grid-template-columns:
         repeat(
             2,
-            minmax(
-                0,
-                1fr
-            )
+            minmax(0, 1fr)
         );
 
     gap: 30px;
@@ -68,13 +91,11 @@
 
 
 /* ============================================================ */
-/* EVENT CARD                                                   */
+/* CARD                                                         */
 /* ============================================================ */
 
 .event-card {
-    position: relative;
-
-    min-height: 520px;
+    min-height: 470px;
 
     display: flex;
 
@@ -84,93 +105,50 @@
 
     border:
         1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.12
-        );
+        rgba(255, 255, 255, 0.12);
 
-    border-radius: 28px;
+    border-radius: 26px;
 
     background:
-        rgba(
-            255,
-            255,
-            255,
-            0.035
-        );
+        rgba(255, 255, 255, 0.035);
 
     transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
 }
 
 
 .event-card:hover {
     transform:
-        translateY(-10px);
+        translateY(-8px);
 
     border-color:
-        rgba(
-            255,
-            255,
-            255,
-            0.35
-        );
+        rgba(255, 255, 255, 0.35);
 
-    box-shadow:
-        0
-        30px
-        80px
-        rgba(
-            0,
-            0,
-            0,
-            0.35
-        );
+    background:
+        rgba(255, 255, 255, 0.055);
 }
 
 
 /* ============================================================ */
-/* EVENT IMAGE                                                  */
+/* IMAGE                                                        */
 /* ============================================================ */
 
 .event-image {
-    height: 250px;
-
-    background-size: cover;
+    height: 260px;
 
     background-position: center;
 
-    transition:
-        transform 0.6s ease;
-}
-
-
-.event-card:hover
-.event-image {
-    transform:
-        scale(1.035);
+    background-size: cover;
 }
 
 
 .code-relay-image {
     background-image:
         linear-gradient(
-            rgba(
-                8,
-                10,
-                16,
-                0.05
-            ),
-            rgba(
-                8,
-                10,
-                16,
-                0.35
-            )
+            rgba(8, 10, 16, 0.08),
+            rgba(8, 10, 16, 0.3)
         ),
         url(
             "/assets/images/events/code-relay.jpg"
@@ -181,18 +159,8 @@
 .blindtest-image {
     background-image:
         linear-gradient(
-            rgba(
-                8,
-                10,
-                16,
-                0.05
-            ),
-            rgba(
-                8,
-                10,
-                16,
-                0.35
-            )
+            rgba(8, 10, 16, 0.08),
+            rgba(8, 10, 16, 0.3)
         ),
         url(
             "/assets/images/events/blindtest.jpg"
@@ -201,7 +169,7 @@
 
 
 /* ============================================================ */
-/* EVENT CONTENT                                                */
+/* CONTENT                                                      */
 /* ============================================================ */
 
 .event-content {
@@ -211,74 +179,38 @@
 
     flex-direction: column;
 
-    padding: 30px;
+    padding: 28px;
 }
 
 
-.event-meta {
+.event-top {
     display: flex;
 
-    flex-wrap: wrap;
+    justify-content: space-between;
 
-    gap: 10px;
+    gap: 15px;
 
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 
-.event-meta span {
-    padding:
-        6px
-        10px;
-
-    border:
-        1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.14
-        );
-
-    border-radius: 999px;
-
+.event-type,
+.event-location {
     color:
-        rgba(
-            255,
-            255,
-            255,
-            0.45
-        );
+        rgba(255, 255, 255, 0.4);
 
     font-size: 0.65rem;
 
-    letter-spacing: 0.12em;
+    letter-spacing: 0.15em;
 }
 
 
 .event-content h2 {
-    margin-bottom: 15px;
+    margin-bottom: 22px;
 
     font-size: 2rem;
 
     font-weight: 500;
-
-    letter-spacing: -0.03em;
-}
-
-
-.event-content p {
-    margin-bottom: 25px;
-
-    color:
-        rgba(
-            255,
-            255,
-            255,
-            0.55
-        );
-
-    line-height: 1.6;
 }
 
 
@@ -292,70 +224,44 @@
     flex-wrap: wrap;
 
     gap: 8px;
-
-    margin-bottom: 30px;
 }
 
 
 .event-tags span {
     padding:
         7px
-        12px;
+        11px;
 
     border-radius: 8px;
 
     background:
-        rgba(
-            255,
-            255,
-            255,
-            0.06
-        );
+        rgba(255, 255, 255, 0.06);
 
     color:
-        rgba(
-            255,
-            255,
-            255,
-            0.7
-        );
+        rgba(255, 255, 255, 0.65);
 
     font-size: 0.75rem;
 }
 
 
 /* ============================================================ */
-/* DISCOVER                                                     */
+/* LINK                                                         */
 /* ============================================================ */
 
-.discover {
+.event-link {
     margin-top: auto;
 
-    padding-top: 20px;
-
-    border-top:
-        1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.08
-        );
+    padding-top: 24px;
 
     color:
-        rgba(
-            255,
-            255,
-            255,
-            0.75
-        );
+        rgba(255, 255, 255, 0.7);
 
     font-size: 0.9rem;
 }
 
 
 .event-card:hover
-.discover {
+.event-link {
     color: white;
 }
 
@@ -364,41 +270,28 @@
 /* RESPONSIVE                                                   */
 /* ============================================================ */
 
-@media (
-    max-width: 800px
-) {
+@media (max-width: 800px) {
 
     .events-page {
         padding:
-            30px
+            40px
             20px
             60px;
     }
 
 
-    .page-header {
-        margin-bottom: 45px;
-    }
-
-
-    .back-link {
-        margin-bottom: 40px;
-    }
-
-
     .events-grid {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
 
     .event-card {
-        min-height: 460px;
+        min-height: 430px;
     }
 
 
     .event-image {
-        height: 210px;
+        height: 220px;
     }
 
 }
