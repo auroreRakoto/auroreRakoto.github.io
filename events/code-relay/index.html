@@ -18,100 +18,184 @@
 
     <link
         rel="stylesheet"
-        href="/css/code-relay.css"
+        href="/css/code-relay-launcher.css"
     >
 </head>
 
-<body class="relay-page">
+<body class="relay-launch-page">
 
-<main class="relay-container">
+<main class="relay-launch-container">
 
-    <header class="relay-header">
+    <header class="relay-launch-header">
 
-        <div>
-            <span class="relay-label">
-                42 BELGIUM
-            </span>
+        <span class="relay-label">
+            42 BELGIUM
+        </span>
 
-            <h1>
-                Code Relay
-            </h1>
-        </div>
+        <h1>
+            Code Relay
+        </h1>
 
-
-        <div
-            class="relay-status"
-            id="relay-status"
-        >
-            WAITING
-        </div>
+        <p>
+            Run the Code Relay server locally,
+            then open the live event interface.
+        </p>
 
     </header>
 
 
-    <section class="relay-game-info">
-
-        <div class="relay-round">
-
-            <span>
-                ROUND
-            </span>
-
-            <strong id="round">
-                -
-            </strong>
-
-        </div>
+    <section class="relay-steps">
 
 
-        <div class="relay-timer">
+        <!-- STEP 1 -->
 
-            <span>
-                TIME
-            </span>
+        <article class="relay-step">
 
-            <strong id="timer">
-                02:00
-            </strong>
+            <div class="step-number">
+                01
+            </div>
 
-        </div>
+            <div class="step-content">
+
+                <span class="step-label">
+                    CLONE
+                </span>
+
+                <h2>
+                    Clone the project
+                </h2>
+
+                <div class="command-box">
+
+                    <code>
+                        git clone https://github.com/auroreRakoto/code-relay.git
+                    </code>
+
+                </div>
+
+                <div class="command-box">
+
+                    <code>
+                        cd code-relay
+                    </code>
+
+                </div>
+
+            </div>
+
+        </article>
 
 
-        <div class="relay-subject">
+        <!-- STEP 2 -->
 
-            <span>
-                SUBJECT
-            </span>
+        <article class="relay-step">
 
-            <strong id="subject">
-                Waiting...
-            </strong>
+            <div class="step-number">
+                02
+            </div>
 
-        </div>
+            <div class="step-content">
+
+                <span class="step-label">
+                    INSTALL
+                </span>
+
+                <h2>
+                    Install dependencies
+                </h2>
+
+                <div class="command-box">
+
+                    <code>
+                        uv sync
+                    </code>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- STEP 3 -->
+
+        <article class="relay-step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <div class="step-content">
+
+                <span class="step-label">
+                    START
+                </span>
+
+                <h2>
+                    Start the server
+                </h2>
+
+                <div class="command-box">
+
+                    <code>
+                        uv run python server.py
+                    </code>
+
+                </div>
+
+                <p class="step-note">
+                    Keep this terminal open while the event is running.
+                </p>
+
+            </div>
+
+        </article>
 
     </section>
 
 
-    <section>
+    <section class="relay-open">
 
-        <h2>
-            Teams
-        </h2>
+        <div>
 
-        <div
-            class="relay-teams"
-            id="teams"
+            <span class="step-label">
+                READY
+            </span>
+
+            <h2>
+                Open Code Relay
+            </h2>
+
+            <p>
+                Once the server is running,
+                open the local interface.
+            </p>
+
+        </div>
+
+
+        <a
+            href="http://localhost:4242"
+            class="relay-open-button"
+            target="_blank"
+            rel="noopener noreferrer"
         >
-        </div>
+            Open Code Relay →
+        </a>
 
     </section>
+
+
+    <footer class="relay-launch-footer">
+
+        <p>
+            The live scoreboard, grading system and relay controls
+            run locally through the Flask server.
+        </p>
+
+    </footer>
 
 </main>
-
-
-<script
-    src="/js/code-relay/scoreboard.js"
-></script>
 
 </body>
 
