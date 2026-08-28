@@ -1,42 +1,52 @@
-/* -------------------------------- */
-/* BACKGROUNDS                      */
-/* -------------------------------- */
+/* ============================================================ */
+/* BACKGROUNDS                                                  */
+/* ============================================================ */
 
 const home =
-    document.querySelector(".home");
+    document.querySelector(
+        ".home"
+    );
+
 
 const menuItems =
-    document.querySelectorAll(".menu-item");
+    document.querySelectorAll(
+        ".menu-item"
+    );
 
 
 const backgrounds = {
 
     projects:
-        "assets/projects.jpg",
+        "/assets/images/home/projects.jpg",
 
     education:
-        "assets/education.jpg",
+        "/assets/images/home/education.jpg",
 
     journey:
-        "assets/journey.jpg",
+        "/assets/images/home/journey.jpg",
 
     experience:
-        "assets/experience.jpg",
+        "/assets/images/home/experience.jpg",
 
     events:
-        "assets/events.jpg",
+        "/assets/images/home/events.jpg",
 
     personal:
-        "assets/personal.jpg"
+        "/assets/images/home/personal.jpg"
 
 };
 
 
 const defaultBackground =
-    "assets/default.jpg";
+    "/assets/images/home/default.jpg";
 
 
 function changeBackground(image) {
+
+    if (!home) {
+        return;
+    }
+
 
     home.style.backgroundImage = `
         linear-gradient(
@@ -50,6 +60,11 @@ function changeBackground(image) {
 
 
 function resetBackground() {
+
+    if (!home) {
+        return;
+    }
+
 
     home.style.backgroundImage = `
         linear-gradient(
@@ -71,13 +86,16 @@ menuItems.forEach(item => {
             const name =
                 item.dataset.bg;
 
+
             if (
                 name &&
                 backgrounds[name]
             ) {
+
                 changeBackground(
                     backgrounds[name]
                 );
+
             }
 
         }
@@ -86,48 +104,35 @@ menuItems.forEach(item => {
 
     item.addEventListener(
         "mouseleave",
-        () => {
-
-            resetBackground();
-
-        }
+        resetBackground
     );
 
 });
 
 
-/* -------------------------------- */
-/* LANGUAGE SYSTEM                  */
-/* -------------------------------- */
+/* ============================================================ */
+/* LANGUAGE                                                     */
+/* ============================================================ */
 
 function setLanguage(language) {
 
-    /*
-        Si jamais la langue stockée
-        n'existe pas, on revient
-        à l'anglais.
-    */
+    if (
+        typeof translations === "undefined"
+    ) {
+        return;
+    }
+
 
     if (!translations[language]) {
         language = "en";
     }
 
 
-    /*
-        Sauvegarde le choix
-        dans le navigateur.
-    */
-
     localStorage.setItem(
         "language",
         language
     );
 
-
-    /*
-        Change tous les éléments
-        avec data-i18n.
-    */
 
     const elements =
         document.querySelectorAll(
@@ -141,22 +146,19 @@ function setLanguage(language) {
             element.dataset.i18n;
 
 
-        if (
-            translations[language][key]
-        ) {
+        const translation =
+            translations[language][key];
+
+
+        if (translation) {
 
             element.textContent =
-                translations[language][key];
+                translation;
 
         }
 
     });
 
-
-    /*
-        Change le bouton
-        de langue.
-    */
 
     const currentLanguage =
         document.getElementById(
@@ -164,7 +166,10 @@ function setLanguage(language) {
         );
 
 
-    if (currentLanguage) {
+    if (
+        currentLanguage &&
+        languageLabels[language]
+    ) {
 
         currentLanguage.textContent =
             languageLabels[language];
@@ -172,20 +177,15 @@ function setLanguage(language) {
     }
 
 
-    /*
-        Indique la langue
-        au navigateur.
-    */
-
     document.documentElement.lang =
         language;
 
 }
 
 
-/* -------------------------------- */
-/* LANGUAGE BUTTONS                 */
-/* -------------------------------- */
+/* ============================================================ */
+/* LANGUAGE BUTTONS                                             */
+/* ============================================================ */
 
 const languageButtons =
     document.querySelectorAll(
@@ -199,10 +199,9 @@ languageButtons.forEach(button => {
         "click",
         () => {
 
-            const language =
-                button.dataset.lang;
-
-            setLanguage(language);
+            setLanguage(
+                button.dataset.lang
+            );
 
         }
     );
@@ -210,9 +209,9 @@ languageButtons.forEach(button => {
 });
 
 
-/* -------------------------------- */
-/* LOAD SAVED LANGUAGE              */
-/* -------------------------------- */
+/* ============================================================ */
+/* INITIAL LANGUAGE                                             */
+/* ============================================================ */
 
 const savedLanguage =
     localStorage.getItem(
@@ -220,12 +219,6 @@ const savedLanguage =
     );
 
 
-if (savedLanguage) {
-
-    setLanguage(savedLanguage);
-
-} else {
-
-    setLanguage("en");
-
-}
+setLanguage(
+    savedLanguage || "en"
+);

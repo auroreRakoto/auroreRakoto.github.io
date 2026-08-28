@@ -1,0 +1,404 @@
+/* ============================================================ */
+/* EVENTS PAGE                                                  */
+/* ============================================================ */
+
+.events-page {
+    min-height: 100vh;
+
+    padding:
+        50px
+        clamp(
+            25px,
+            6vw,
+            100px
+        )
+        80px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(
+                80,
+                90,
+                255,
+                0.14
+            ),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(
+                255,
+                50,
+                180,
+                0.1
+            ),
+            transparent 35%
+        ),
+        #080a10;
+}
+
+
+/* ============================================================ */
+/* EVENTS GRID                                                  */
+/* ============================================================ */
+
+.events-grid {
+    width:
+        min(
+            1300px,
+            100%
+        );
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 30px;
+}
+
+
+/* ============================================================ */
+/* EVENT CARD                                                   */
+/* ============================================================ */
+
+.event-card {
+    position: relative;
+
+    min-height: 520px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+
+    border-radius: 28px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.035
+        );
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.event-card:hover {
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.35
+        );
+
+    box-shadow:
+        0
+        30px
+        80px
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+}
+
+
+/* ============================================================ */
+/* EVENT IMAGE                                                  */
+/* ============================================================ */
+
+.event-image {
+    height: 250px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    transition:
+        transform 0.6s ease;
+}
+
+
+.event-card:hover
+.event-image {
+    transform:
+        scale(1.035);
+}
+
+
+.code-relay-image {
+    background-image:
+        linear-gradient(
+            rgba(
+                8,
+                10,
+                16,
+                0.05
+            ),
+            rgba(
+                8,
+                10,
+                16,
+                0.35
+            )
+        ),
+        url(
+            "/assets/images/events/code-relay.jpg"
+        );
+}
+
+
+.blindtest-image {
+    background-image:
+        linear-gradient(
+            rgba(
+                8,
+                10,
+                16,
+                0.05
+            ),
+            rgba(
+                8,
+                10,
+                16,
+                0.35
+            )
+        ),
+        url(
+            "/assets/images/events/blindtest.jpg"
+        );
+}
+
+
+/* ============================================================ */
+/* EVENT CONTENT                                                */
+/* ============================================================ */
+
+.event-content {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 30px;
+}
+
+
+.event-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+
+.event-meta span {
+    padding:
+        6px
+        10px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.14
+        );
+
+    border-radius: 999px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.45
+        );
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+.event-content h2 {
+    margin-bottom: 15px;
+
+    font-size: 2rem;
+
+    font-weight: 500;
+
+    letter-spacing: -0.03em;
+}
+
+
+.event-content p {
+    margin-bottom: 25px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+    line-height: 1.6;
+}
+
+
+/* ============================================================ */
+/* TAGS                                                         */
+/* ============================================================ */
+
+.event-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 30px;
+}
+
+
+.event-tags span {
+    padding:
+        7px
+        12px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.06
+        );
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.7
+        );
+
+    font-size: 0.75rem;
+}
+
+
+/* ============================================================ */
+/* DISCOVER                                                     */
+/* ============================================================ */
+
+.discover {
+    margin-top: auto;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.75
+        );
+
+    font-size: 0.9rem;
+}
+
+
+.event-card:hover
+.discover {
+    color: white;
+}
+
+
+/* ============================================================ */
+/* RESPONSIVE                                                   */
+/* ============================================================ */
+
+@media (
+    max-width: 800px
+) {
+
+    .events-page {
+        padding:
+            30px
+            20px
+            60px;
+    }
+
+
+    .page-header {
+        margin-bottom: 45px;
+    }
+
+
+    .back-link {
+        margin-bottom: 40px;
+    }
+
+
+    .events-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .event-card {
+        min-height: 460px;
+    }
+
+
+    .event-image {
+        height: 210px;
+    }
+
+}
