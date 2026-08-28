@@ -1,0 +1,334 @@
+/* ============================================================ */
+/* CODE RELAY LAUNCH PAGE                                       */
+/* ============================================================ */
+
+.relay-launch-page {
+    min-height: 100vh;
+
+    padding:
+        70px
+        clamp(24px, 7vw, 110px)
+        80px;
+
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(79, 124, 255, 0.16),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 59, 212, 0.10),
+            transparent 35%
+        ),
+        #070914;
+}
+
+
+.relay-launch-container {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+}
+
+
+/* ============================================================ */
+/* HEADER                                                       */
+/* ============================================================ */
+
+.relay-launch-header {
+    margin-bottom: 70px;
+}
+
+
+.relay-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color:
+        rgba(255, 255, 255, 0.35);
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.18em;
+}
+
+
+.relay-launch-header h1 {
+    margin-bottom: 20px;
+
+    font-size:
+        clamp(
+            3.5rem,
+            8vw,
+            7rem
+        );
+
+    font-weight: 600;
+
+    letter-spacing: -0.06em;
+}
+
+
+.relay-launch-header p {
+    max-width: 600px;
+
+    color:
+        rgba(255, 255, 255, 0.5);
+
+    font-size: 1.05rem;
+
+    line-height: 1.6;
+}
+
+
+/* ============================================================ */
+/* STEPS                                                        */
+/* ============================================================ */
+
+.relay-steps {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    margin-bottom: 50px;
+}
+
+
+.relay-step {
+    display: grid;
+
+    grid-template-columns:
+        90px
+        1fr;
+
+    gap: 25px;
+
+    padding: 32px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    border-radius: 22px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+}
+
+
+.step-number {
+    color:
+        rgba(255, 255, 255, 0.25);
+
+    font-size: 1rem;
+
+    letter-spacing: 0.15em;
+}
+
+
+.step-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color:
+        rgba(255, 255, 255, 0.35);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.15em;
+}
+
+
+.step-content h2 {
+    margin-bottom: 22px;
+
+    font-size: 1.5rem;
+
+    font-weight: 500;
+}
+
+
+/* ============================================================ */
+/* COMMANDS                                                     */
+/* ============================================================ */
+
+.command-box {
+    margin-top: 10px;
+
+    padding:
+        16px
+        18px;
+
+    overflow-x: auto;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 12px;
+
+    background:
+        rgba(0, 0, 0, 0.35);
+}
+
+
+.command-box code {
+    color:
+        rgba(255, 255, 255, 0.8);
+
+    font-family:
+        Consolas,
+        Monaco,
+        monospace;
+
+    font-size: 0.9rem;
+
+    white-space: nowrap;
+}
+
+
+.step-note {
+    margin-top: 16px;
+
+    color:
+        rgba(255, 255, 255, 0.4);
+
+    font-size: 0.85rem;
+}
+
+
+/* ============================================================ */
+/* OPEN                                                         */
+/* ============================================================ */
+
+.relay-open {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 35px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    border-radius: 24px;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+}
+
+
+.relay-open h2 {
+    margin-bottom: 8px;
+
+    font-size: 1.7rem;
+
+    font-weight: 500;
+}
+
+
+.relay-open p {
+    color:
+        rgba(255, 255, 255, 0.45);
+}
+
+
+.relay-open-button {
+    flex-shrink: 0;
+
+    padding:
+        14px
+        22px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.3);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.relay-open-button:hover {
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(255, 255, 255, 0.13);
+
+    border-color:
+        rgba(255, 255, 255, 0.5);
+}
+
+
+/* ============================================================ */
+/* FOOTER                                                       */
+/* ============================================================ */
+
+.relay-launch-footer {
+    margin-top: 35px;
+
+    color:
+        rgba(255, 255, 255, 0.3);
+
+    font-size: 0.8rem;
+
+    line-height: 1.6;
+}
+
+
+/* ============================================================ */
+/* RESPONSIVE                                                   */
+/* ============================================================ */
+
+@media (max-width: 700px) {
+
+    .relay-launch-page {
+        padding:
+            45px
+            20px
+            60px;
+    }
+
+
+    .relay-step {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        padding: 24px;
+    }
+
+
+    .relay-open {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .relay-open-button {
+        width: 100%;
+
+        text-align: center;
+    }
+
+}
