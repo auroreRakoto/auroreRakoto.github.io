@@ -218,6 +218,40 @@ const savedLanguage =
         "language"
     );
 
+/* ============================================================ */
+/* PERSONAL ACCESS                                              */
+/* ============================================================ */
+
+const personalItem =
+    document.querySelector(".menu-item.locked");
+
+
+if (personalItem) {
+
+    personalItem.addEventListener(
+        "click",
+        () => {
+
+            const code =
+                prompt("Enter the access code");
+
+
+            if (code === "aurore42") {
+
+                window.location.href =
+                    "/personal/";
+
+            } else if (code !== null) {
+
+                alert("Incorrect code.");
+
+            }
+
+        }
+    );
+
+}
+
 
 setLanguage(
     savedLanguage || "en"
