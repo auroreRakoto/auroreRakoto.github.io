@@ -1,9 +1,13 @@
 # aurrakot.github.io
 
+🌐 **Site web :** https://auroreRakoto.github.io/
+
+## Structure du projet
+
+```text
 auroreRakoto.github.io/
 │
 ├── index.html
-│
 ├── README.md
 │
 ├── events/
@@ -40,3 +44,4 @@ auroreRakoto.github.io/
     │       └── blindtest.jpg
     │
     └── icons/
+```
