@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+```
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Personal — Aurore Rakoto</title>
+
+<link
+    rel="stylesheet"
+    href="/personal/personal.css"
+>
+```
+
+</head>
+
+<body>
+
+<main class="personal-page">
+
+```
+<!-- HEADER -->
+
+<header class="personal-header">
+
+    <div>
+        <p class="eyebrow">AURORE RAKOTO</p>
+        <h1>Weekly Meals</h1>
+    </div>
+
+    <div class="header-actions">
+
+        <button
+            id="generate-week"
+            class="generate-button"
+        >
+            ↻ Generate week
+        </button>
+
+        <a
+            href="/"
+            class="back-button"
+        >
+            ← Home
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- WEEK -->
+
+<section
+    id="week"
+    class="week"
+></section>
+
+
+<!-- RECIPE MODAL -->
+
+<div
+    id="recipe-modal"
+    class="modal hidden"
+>
+
+    <div class="modal-overlay"></div>
+
+    <article class="recipe-modal">
+
+        <button
+            id="close-modal"
+            class="close-button"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+        <div class="recipe-header">
+
+            <span
+                id="recipe-category"
+                class="recipe-category"
+            >
+                RECIPE
+            </span>
+
+            <h2 id="recipe-title">
+                Recipe
+            </h2>
+
+            <div
+                id="recipe-meta"
+                class="recipe-meta"
+            ></div>
+
+        </div>
+
+
+        <div class="recipe-content">
+
+            <div>
+
+                <h3>Ingredients</h3>
+
+                <ul
+                    id="recipe-ingredients"
+                    class="ingredients"
+                ></ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Preparation</h3>
+
+                <ol
+                    id="recipe-instructions"
+                    class="instructions"
+                ></ol>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</div>
+```
+
+</main>
+
+<script src="/personal/personal.js"></script>
+
+</body>
+
+</html>
